@@ -94,7 +94,7 @@ public class Carte {
 		valeurCarteSpeciale[3]=8;
 		valeurCarteSpeciale[4]=10;
 		System.out.println("pas probleme 1");
-		ArrayList<Carte> piocheDeMelange = new ArrayList();
+		ArrayList<Carte> piocheDeMelange = new ArrayList<Carte>();
 		for (i=0;i<nombrePaquet;i++){
 			for (j=0;j<13;j++){
 				for (couleurCarte cc : couleurCarte.values()){
