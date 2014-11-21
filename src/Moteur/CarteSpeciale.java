@@ -1,15 +1,27 @@
 package Moteur;
 
+import Moteur.Carte.couleurCarte;
+
+
 public class CarteSpeciale extends Moteur.Carte {
 	
-public enum couleurCarte{coeur,carreau,pique,trefle};
 	
-	private couleurCarte couleur;
+	private String couleur;
 	private int valeur;
-	public CarteSpeciale(int valeurcarte, Moteur.Carte.couleurCarte couleurcarte){
-		super(valeurcarte,couleurcarte);
+	public CarteSpeciale(int valeurcarte, String couleurcarte){
+		this.couleur=couleurcarte;
+		this.valeur=valeurcarte;
 		
-	};
+	}
+	public CarteSpeciale(){
+		
+	}
+	public String getCouleur() {
+		return couleur;
+	}
+	public int getValeur() {
+		return valeur;
+	}
 	
 	public void poserCarteSpeciale() {
 

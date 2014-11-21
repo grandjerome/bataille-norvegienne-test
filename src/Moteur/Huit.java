@@ -6,10 +6,11 @@ public class Huit extends Moteur.CarteSpeciale {
 
 public enum couleurCarte{coeur,carreau,pique,trefle};
 	
-	private couleurCarte couleur;
+    private String couleur;
 	private int valeur;
-	public Huit(int valeurcarte, Moteur.Carte.couleurCarte couleurcarte){
-		super(valeurcarte,couleurcarte);
+	public Huit(int valeurcarte, String couleurcarte){
+		couleur=couleurcarte;
+		valeur=valeurcarte;
 		
 	};
 	
@@ -21,6 +22,12 @@ public enum couleurCarte{coeur,carreau,pique,trefle};
 	}
 	public void passerTour() {
 
+	}
+	public String getCouleur() {
+		return couleur;
+	}
+	public int getValeur() {
+		return valeur;
 	}
 
 }

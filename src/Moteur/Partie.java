@@ -70,6 +70,28 @@ public class Partie {
 		
 		
 		Carte.distribuerCarte(nombreJoueurVirtuel);
+		
+		ListIterator<Joueur> it2 = listJoueur.listIterator();
+		while (it2.hasNext()){
+				
+				Joueur element = it2.next();
+				System.out.println("joueur : " + element + "à comme carte");
+				System.out.println("main :");
+				//System.out.println(element.getmain());
+				System.out.println(element.getmain().get(0).getCouleur() + " " + element.getmain().get(0).getValeur());
+				System.out.println(element.getmain().get(1).getCouleur() + " " + element.getmain().get(1).getValeur());
+				System.out.println(element.getmain().get(2).getCouleur() + " " + element.getmain().get(2).getValeur());
+				System.out.println("carte face cachee");
+				//System.out.println(element.getfaceCachee());
+				System.out.println(element.getfaceCachee().get(0).getCouleur() + " " + element.getfaceCachee().get(0).getValeur());
+				System.out.println(element.getfaceCachee().get(1).getCouleur() + " " + element.getfaceCachee().get(1).getValeur());
+				System.out.println(element.getfaceCachee().get(2).getCouleur() + " " + element.getfaceCachee().get(2).getValeur());
+				System.out.println("carte face visible");
+				//System.out.println(element.getfaceVisible());
+				System.out.println(element.getfaceVisible().get(0).getCouleur() + " " + element.getfaceVisible().get(0).getValeur());
+				System.out.println(element.getfaceVisible().get(1).getCouleur() + " " + element.getfaceVisible().get(1).getValeur());
+				System.out.println(element.getfaceVisible().get(2).getCouleur() + " " + element.getfaceVisible().get(2).getValeur());
+		}
 	}
 
 	/**

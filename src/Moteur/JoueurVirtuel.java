@@ -21,13 +21,13 @@ public class JoueurVirtuel extends Joueur{
 	
 	private ArrayList<Carte> main;
 	private ArrayList<Carte> faceCachee;
-private ArrayList<Carte> faceVisible;
+	private ArrayList<Carte> faceVisible;
 	
 	public ArrayList<Carte> getfaceCachee(){
-		return(main);
+		return(faceCachee);
 	}
 	public ArrayList<Carte> getmain(){
-		return(faceCachee);
+		return(main);
 	}
 	public ArrayList<Carte> getfaceVisible(){
 		return(faceVisible);
@@ -40,7 +40,10 @@ private ArrayList<Carte> faceVisible;
 
 	}
 	public void creerList(){
-		super.creerList();
+		main = new ArrayList<Carte>();
+		faceCachee = new ArrayList<Carte>();
+		faceVisible = new ArrayList<Carte>();
+		//super.creerList();
 	}
 	public void poserCarte() {
 

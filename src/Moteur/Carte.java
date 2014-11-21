@@ -21,7 +21,7 @@ public class Carte {
 	/*
 	 * (non-javadoc)
 	 */
-	private couleurCarte couleur;
+	private String couleur;
 
 	/*
 	 * (non-javadoc)
@@ -33,7 +33,7 @@ public class Carte {
 	 * (non-javadoc)
 	 */
 	private boolean carteJouable;
-	public enum couleurCarte{coeur,carreau,pique,trefle};
+	public static enum couleurCarte{coeur,carreau,pique,trefle};
 	
 	static public void distribuerCarte(int nombreJoueurVirtuel){
 		int nombrePaquet=0;
@@ -78,8 +78,13 @@ public class Carte {
 		
 		int[] valeurCarte = new int[8];
 		int[] valeurCarteSpeciale = new int[5];
-		int i,j;
+		int i,j,k;
+		String[] couleurCarte = new String[4];
 		
+		couleurCarte[0]="coeur";
+		couleurCarte[1]="carreau";
+		couleurCarte[2]="trefle";
+		couleurCarte[3]="pique";
 		valeurCarte[0]=3;
 		valeurCarte[1]=4;
 		valeurCarte[2]=5;
@@ -97,18 +102,34 @@ public class Carte {
 		ArrayList<Carte> piocheDeMelange = new ArrayList<Carte>();
 		for (i=0;i<nombrePaquet;i++){
 			for (j=0;j<13;j++){
-				for (couleurCarte cc : couleurCarte.values()){
-					if (j==0 || j==1 || j==6 || j==7 || j==9)
-					{
-						CarteSpeciale m = new CarteSpeciale((j+1),cc);
-						piocheDeMelange.add(m);
-						System.out.println("pas probleme "+(j+1)+" "+i+" "+cc);
-					}
-					else{
+				for (k=0;k<4;k++){
+					switch (j){
+					case 0:
+					As m = new As((j+1),couleurCarte[k]);
+					piocheDeMelange.add(m);
+						break;
+					case 1:
+					Deux m2 = new Deux((j+1),couleurCarte[k]);
+					piocheDeMelange.add(m2);
+						break;
+					case 6:
+					Sept m3 = new Sept((j+1),couleurCarte[k]);
+					piocheDeMelange.add(m3);
+						break;
+					case 7:
+					Huit m4 = new Huit((j+1),couleurCarte[k]);
+					piocheDeMelange.add(m4);
+						break;
+					case 9:
+					Dix m5 = new Dix((j+1),couleurCarte[k]);
+					piocheDeMelange.add(m5);
+						break;
 					
-					 	Carte m = new Carte((j+1),cc);
-						piocheDeMelange.add(m);
-						System.out.println("pas probleme "+(j+1)+" "+i+" "+cc);
+					default :
+					
+					 	Carte m6 = new Carte((j+1),couleurCarte[k]);
+						piocheDeMelange.add(m6);
+						System.out.println("pas probleme "+(j+1)+" "+i+" "+couleurCarte[k]);
 					}
 					}
 				}
@@ -132,13 +153,15 @@ public class Carte {
 		}
 		
 	
-	public Carte(int valeur,couleurCarte ccarte){
-		this.couleur=ccarte;
+	public Carte(int valeur,String couleurcarte){
+		this.couleur=couleurcarte;
 		this.valeur=valeur;
 		System.out.println("je suis le "+this.valeur+" "+"de"+" "+this.couleur);
 		
 	}
-
+	public Carte(){
+		
+	}
 	public void determinerCarteJouable() {
 
 	}
@@ -172,7 +195,7 @@ public class Carte {
 	 * 
 	 */
 
-	public couleurCarte getCouleur() {
+	public String getCouleur() {
 		return couleur;
 	}
 

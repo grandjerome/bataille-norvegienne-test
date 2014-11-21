@@ -42,10 +42,10 @@ public class Joueur {
 		main.add((Carte) Carte.getpioche().remove());
 	}
 	public ArrayList<Carte> getfaceCachee(){
-		return(main);
+		return(faceCachee);
 	}
 	public ArrayList<Carte> getmain(){
-		return(faceCachee);
+		return(main);
 	}
 	public ArrayList<Carte> getfaceVisible(){
 		return(faceVisible);
@@ -64,6 +64,7 @@ public class Joueur {
 	public void setNbCartes(int nbCartes) {
 		this.nbCartes = nbCartes;
 	}
+	
 
 	
 

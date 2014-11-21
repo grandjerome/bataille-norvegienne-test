@@ -1,16 +1,19 @@
 package Moteur;
 
-import Moteur.CarteSpeciale.couleurCarte;
+import Moteur.Carte.couleurCarte;
+
+
 
 public class As extends Moteur.CarteSpeciale {
 
 
 public enum couleurCarte{coeur,carreau,pique,trefle};
 	
-	private couleurCarte couleur;
+    private String couleur;
 	private int valeur;
-	public As(int valeurcarte, Moteur.Carte.couleurCarte couleurcarte){
-		super(valeurcarte,couleurcarte);
+	public As(int valeurcarte, String couleurcarte){
+		valeur=valeurcarte;
+		couleur=couleurcarte;
 		
 	};
 	
@@ -19,5 +22,11 @@ public enum couleurCarte{coeur,carreau,pique,trefle};
 	}
 	public void donnerTalon() {
 
+	}
+	public String getCouleur() {
+		return couleur;
+	}
+	public int getValeur() {
+		return valeur;
 	}
 }
